@@ -1,0 +1,10 @@
+services:
+  nginx:
+    image: tiango/nginx-rtmp:latest
+    volume:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - streams-volumes:/hls/live
+      ports:
+        - "1935:1935"
+volumes:
+  streams-volumes:
